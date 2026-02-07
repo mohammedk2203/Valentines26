@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For Hanan 💖</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    background: #ffe6f0;
+    font-family: "Comic Sans MS", cursive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.card {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    text-align: center;
+    max-width: 400px;
+    position: relative;
+}
+
+h1 {
+    color: #ff4d88;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 12px 25px;
+    font-size: 18px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+#yesBtn {
+    background: #ff4d88;
+    color: white;
+}
+
+#noBtn {
+    background: #7aa7ff;
+    color: white;
+    position: absolute;
+}
+
+img {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    width: 140px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.hearts span {
+    position: fixed;
+    bottom: -50px;
+    font-size: 24px;
+    animation: floatUp 6s linear infinite;
+    color: #ff4d88;
+}
+
+@keyframes floatUp {
+    from { transform: translateY(0); opacity: 1; }
+    to { transform: translateY(-110vh); opacity: 0; }
+}
+</style>
+</head>
+
+<body>
+
+<img src="IMG_0198.jpeg" alt="Us 💙">
+
+<div class="card" id="screen1">
+    <h1>Sorry…</h1>
+    <h1>Here are your flowers 💐</h1>
+    <button id="yesBtn" onclick="showQuestion()">Continue</button>
+</div>
+
+<div class="card" id="screen2" style="display:none;">
+    <h1>Will You Be My Valentine, Hanan? 💘</h1>
+    <button id="yesBtn" onclick="yay()">Yes</button>
+    <button id="noBtn">No</button>
+</div>
+
+<div class="card" id="screen3" style="display:none;">
+    <h1>YAYYYYYY 💖💖💖</h1>
+    <h1>I knew it 😌</h1>
+</div>
+
+<div class="hearts">
+    <span style="left:10%">💖</span>
+    <span style="left:30%">💗</span>
+    <span style="left:50%">💘</span>
+    <span style="left:70%">💖</span>
+    <span style="left:90%">💗</span>
+</div>
+
+<script>
+const noBtn = document.getElementById("noBtn");
+
+noBtn.addEventListener("mouseenter", () => {
+    alert("Wrong answer 😌");
+    const x = Math.random() * (window.innerWidth - 120);
+    const y = Math.random() * (window.innerHeight - 120);
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+});
+
+function showQuestion() {
+    document.getElementById("screen1").style.display = "none";
+    document.getElementById("screen2").style.display = "block";
+}
+
+function yay() {
+    document.getElementById("screen2").style.display = "none";
+    document.getElementById("screen3").style.display = "block";
+}
+</script>
+
+</body>
+</html>
